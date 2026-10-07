@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Moçambique 🇲🇿</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5f5;
+    color:#222;
+}
+
+/* MENU */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:#111;
+    border-bottom:4px solid #007847;
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#f9d616;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#f9d616;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
+}
+
+.hero-content{
+    max-width:850px;
+    padding:30px;
+}
+
+.hero h1{
+    font-size:clamp(50px,9vw,100px);
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#f9d616;
+}
+
+.hero p{
+    font-size:21px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.botao{
+    display:inline-block;
+    padding:15px 28px;
+    background:#007847;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.botao:hover{
+    background:#ce1126;
+}
+
+/* SEÇÕES */
+
+section{
+    padding:90px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.titulo{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.titulo h2{
+    color:#007847;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.titulo p{
+    color:#666;
+}
+
+/* SOBRE */
+
+.sobre{
+    background:white;
+}
+
+.sobre-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.sobre img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:18px;
+}
+
+.sobre-texto h3{
+    color:#ce1126;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.sobre-texto p{
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:22px;
+}
+
+.card h3{
+    color:#007847;
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#555;
+    line-height:1.6;
+}
+
+/* CORES DA BANDEIRA */
+
+.bandeira{
+    background:#007847;
+    color:white;
+}
+
+.bandeira-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.cor{
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    background:rgba(255,255,255,.12);
+}
+
+.cor h3{
+    margin-bottom:10px;
+}
+
+.verde{
+    border-top:8px solid #007847;
+}
+
+.vermelho{
+    border-top:8px solid #ce1126;
+}
+
+.amarelo{
+    border-top:8px solid #f9d616;
+}
+
+/* IDIOMAS */
+
+.idiomas{
+    background:#f0f7f3;
+}
+
+.idioma-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.idioma{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    border-top:5px solid #ce1126;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.idioma h3{
+    color:#007847;
+    margin-bottom:8px;
+}
+
+/* EXPRESSÕES */
+
+.expressoes{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.expressao{
+    background:#111;
+    color:white;
+    padding:25px;
+    border-radius:15px;
+    border-left:5px solid #f9d616;
+}
+
+.expressao h3{
+    color:#f9d616;
+    margin-bottom:10px;
+}
+
+/* CURIOSIDADES */
+
+.curiosidades{
+    background:#007847;
+    color:white;
+}
+
+.curiosidades .titulo h2{
+    color:white;
+}
+
+.curiosidades .titulo p{
+    color:#ddd;
+}
+
+.fatos{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.fato{
+    background:rgba(255,255,255,.1);
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.fato strong{
+    display:block;
+    font-size:40px;
+    color:#f9d616;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+}
+
+footer h2{
+    color:#f9d616;
+    margin-bottom:10px;
+}
+
+/* CELULAR */
+
+@media(max-width:800px){
+
+    nav ul{
+        display:none;
+    }
+
+    .sobre-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .bandeira-grid{
+        grid-template-columns:1fr;
+    }
+
+    .idioma-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .expressoes{
+        grid-template-columns:1fr;
+    }
+
+    .fatos{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .idioma-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:55px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+🇲🇿 Moçambique<span>.</span>
+</div>
+
+<ul>
+<li><a href="#inicio">Início</a></li>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#lugares">Lugares</a></li>
+<li><a href="#cultura">Cultura</a></li>
+<li><a href="#idiomas">Idiomas</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- INÍCIO -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<h1>
+Conheça <span>Moçambique</span>
+</h1>
+
+<p>
+Um país de grande diversidade cultural, belas praias,
+paisagens naturais, história e tradições.
+</p>
+
+<a href="#sobre" class="botao">
+Explorar o país
+</a>
+
+</div>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section class="sobre" id="sobre">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>Sobre Moçambique</h2>
+
+<p>Conheça um pouco da história e da geografia do país.</p>
+
+</div>
+
+<div class="sobre-grid">
+
+<img
+src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85"
+alt="Paisagem tropical">
+
+<div class="sobre-texto">
+
+<h3>Um país africano extraordinário</h3>
+
+<p>
+Moçambique está localizado na costa sudeste de África,
+junto ao Oceano Índico.
+</p>
+
+<p>
+A capital do país é Maputo. O português é a língua oficial,
+enquanto diversas línguas nacionais são utilizadas
+em diferentes regiões.
+</p>
+
+<p>
+O país é conhecido pela sua diversidade cultural,
+pelas praias, ilhas, parques naturais e pela riqueza
+das suas tradições.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LUGARES -->
+
+<section id="lugares">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>Lugares para conhecer</h2>
+
+<p>
+Descubra algumas das paisagens e destinos associados
+a Moçambique.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img
+src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=85"
+alt="Oceano">
+
+<div class="card-content">
+
+<h3>Oceano Índico</h3>
+
+<p>
+A costa moçambicana possui belas praias,
+águas tropicais e diversas ilhas.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img
+src="https://images.unsplash.com/photo-1505881502353-a1986add3762?auto=format&fit=crop&w=1000&q=85"
+alt="Praia">
+
+<div class="card-content">
+
+<h3>Praias</h3>
+
+<p>
+As praias são uma das principais atrações
+naturais do país.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<img
+src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=85"
+alt="Natureza">
+
+<div class="card-content">
+
+<h3>Natureza</h3>
+
+<p>
+Moçambique possui diferentes ambientes naturais,
+incluindo parques e áreas de conservação.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CULTURA -->
+
+<section id="cultura" class="bandeira">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>As cores da bandeira</h2>
+
+<p>
+A bandeira de Moçambique possui importantes símbolos
+da história do país.
+</p>
+
+</div>
+
+<div class="bandeira-grid">
+
+<div class="cor verde">
+
+<h3>🟢 Verde</h3>
+
+<p>
+Associado à agricultura e à riqueza da terra.
+</p>
+
+</div>
+
+<div class="cor vermelho">
+
+<h3>🔴 Vermelho</h3>
+
+<p>
+Associado à luta pela independência.
+</p>
+
+</div>
+
+<div class="cor amarelo">
+
+<h3>🟡 Amarelo</h3>
+
+<p>
+Associado às riquezas minerais do país.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- IDIOMAS -->
+
+<section class="idiomas" id="idiomas">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>Idiomas</h2>
+
+<p>
+Moçambique possui grande diversidade linguística.
+</p>
+
+</div>
+
+<div class="idioma-grid">
+
+<div class="idioma">
+<h3>Português</h3>
+<p>Língua oficial do país.</p>
+</div>
+
+<div class="idioma">
+<h3>Emakhuwa</h3>
+<p>Uma das principais línguas nacionais.</p>
+</div>
+
+<div class="idioma">
+<h3>Changana</h3>
+<p>Falado principalmente no sul.</p>
+</div>
+
+<div class="idioma">
+<h3>Sena</h3>
+<p>Uma língua utilizada em regiões do centro.</p>
+</div>
+
+<div class="idioma">
+<h3>Elomwe</h3>
+<p>Presente principalmente no norte.</p>
+</div>
+
+<div class="idioma">
+<h3>Chuwabo</h3>
+<p>Utilizado em partes da região centro-norte.</p>
+</div>
+
+<div class="idioma">
+<h3>Ronga</h3>
+<p>Uma língua tradicional do sul.</p>
+</div>
+
+<div class="idioma">
+<h3>Tsonga</h3>
+<p>Parte da diversidade linguística do país.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPRESSÕES -->
+
+<section>
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>Expressões e palavras</h2>
+
+<p>
+Alguns termos conhecidos no contexto moçambicano.
+</p>
+
+</div>
+
+<div class="expressoes">
+
+<div class="expressao">
+
+<h3>Maningue</h3>
+
+<p>
+Expressão usada para indicar intensidade,
+como “muito” ou “bastante”.
+</p>
+
+</div>
+
+<div class="expressao">
+
+<h3>Txopela</h3>
+
+<p>
+Nome popular associado a um tipo de transporte
+de três rodas.
+</p>
+
+</div>
+
+<div class="expressao">
+
+<h3>Machimbombo</h3>
+
+<p>
+Termo usado em Moçambique para autocarro
+em determinados contextos.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CURIOSIDADES -->
+
+<section class="curiosidades">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>Curiosidades 🇲🇿</h2>
+
+<p>
+Algumas informações para o seu trabalho escolar.
+</p>
+
+</div>
+
+<div class="fatos">
+
+<div class="fato">
+
+<strong>11</strong>
+
+Províncias
+
+</div>
+
+<div class="fato">
+
+<strong>25 JUN</strong>
+
+Dia da Independência
+
+</div>
+
+<div class="fato">
+
+<strong>🌊</strong>
+
+Oceano Índico
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RODAPÉ -->
+
+<footer>
+
+<h2>🇲🇿 MOÇAMBIQUE</h2>
+
+<p>
+Trabalho escolar sobre história, cultura, natureza e turismo.
+</p>
+
+<br>
+
+<p>
+© 2026 — Projeto escolar
+</p>
+
+</footer>
+
+</body>
+</html>
+3. Depois de colocar o código
+No GitHub, vá em:
+
+Settings → Pages → Build and deployment → Source
+
+Escolha:
+
+Deploy from a branch
+Depois:
+
+Branch: main
+Folder: / (root)
